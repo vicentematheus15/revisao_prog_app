@@ -8,6 +8,7 @@ function App() {
     <>
       <Cabecalho />
       <h1>Hello React</h1>
+      <p>paragrafo normal</p>
     </>
   )
 }
