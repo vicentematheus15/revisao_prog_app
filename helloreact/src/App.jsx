@@ -1,6 +1,7 @@
 import './App.css'
 import Cabecalho from './components/Cabecalho'
 import { useState } from 'react'
+import Imesada from './components/Imesada'
 
 function App() {
   const [cont, setCont] = useState(0)
@@ -25,7 +26,7 @@ function App() {
       <input type="text" 
         value={inputPreco}
         onChange={(event) => setInputPreco(event.target.value)}
-      />
+        />
       {inputPreco}
       <button onClick={tratarTeste}>Teste</button>
       {cont}
@@ -33,6 +34,8 @@ function App() {
       <button onClick={calcularDobro}>Dobrar</button>
         Dobro do número: {dobro}
       </div>
+      <br />
+      <Imesada/>
     </>
   )
 }
