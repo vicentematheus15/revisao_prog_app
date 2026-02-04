@@ -13,7 +13,7 @@ function App() {
 
   function calcularDobro(){
     let valor = inputPreco
-    setDobro(inputPreco * 2)
+    setDobro(valor * 2)
   }
   
 
