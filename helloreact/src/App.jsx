@@ -8,7 +8,7 @@ import Imesada from './components/Imesada'
       <div className='conteiner-app'>
       <Cabecalho />
       
-      <Imesada/>
+      {/* <Imesada/> */}
     </div>
   )
 }
