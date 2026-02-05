@@ -1,5 +1,43 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+
+.container-imesada{
+    background-color: rgb(211, 208, 208);
+    min-height: calc(100vh - 70px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-imesada{
+    background-color: whitesmoke;
+    padding: 1em;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #00000080;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+}
+
+.buttons{
+    display: flex;
+    flex-direction: row;
+    gap: 0.5em;
+}
+
+.buttons :hover{
+    cursor: pointer;
+}
+
+
+.btCreditar{
+    background-color: rgb(72, 153, 72);
+    padding: 0.3em;
+}
+
+.btDebitar{
+    background-color: rgb(245, 76, 76);
+    padding: 0.3em;
 }

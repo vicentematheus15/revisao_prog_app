@@ -2,7 +2,7 @@ import './Cabecalho.css'
 function Cabecalho() {
 
     return (
-        <header>
+        <header className='containerCabecalho'>
             Cabeçalho da página
             <p className='paragrafo-do-header'>Textinho qualquer</p>
         </header>

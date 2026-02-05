@@ -1,3 +1,16 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container-app{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5em;
+    
+}
 .resultado {
     background-color: darkgoldenrod;
 }
