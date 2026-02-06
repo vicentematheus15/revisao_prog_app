@@ -52,8 +52,3 @@
     flex-direction: column;
     align-items: center;
 }
-
-.card-movimentacao{
-    display: flex;
-    justify-content: space-around;
-}
