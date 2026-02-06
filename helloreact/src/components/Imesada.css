@@ -19,6 +19,7 @@
     justify-content: center;
     align-items: center;
     gap: 1em;
+    min-width: 40%;
 }
 
 .buttons{
@@ -44,4 +45,15 @@
 
 .imagem-porco{
     width: 32px;
+}
+
+.card-movimentacoes{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-movimentacao{
+    display: flex;
+    justify-content: space-around;
 }
