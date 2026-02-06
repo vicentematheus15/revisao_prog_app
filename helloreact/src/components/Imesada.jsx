@@ -4,15 +4,35 @@ import './Imesada.css'
 function Imesada() {
     const [saldo, setSaldo] = useState(0)
     const [inputValor, setInputValor] = useState('')
+    const [inputDescricao, setInputDescricao] = useState('')
+    const [movimentacoes, setMovimentacoes] = useState([])
 
     function creditarValor(){
-        let valor = Number(inputValor)
-        setSaldo(saldo + valor)
+        setSaldo(saldo + Number(inputValor))
+        
+        setMovimentacoes([...movimentacoes, {
+          tipo: "Crédito",
+          valor: inputValor,
+          id: Date.now(),
+          descricao: inputDescricao
+        }])
+
+        setInputValor("")
+        setInputDescricao("")
     }
 
     function debitarValor(){
-        let valor = Number(inputValor)
-        setSaldo(saldo - valor)
+       setSaldo(saldo - Number(inputValor))
+        
+        setMovimentacoes([...movimentacoes, {
+          tipo: "Débito",
+          valor: inputValor,
+          id: Date.now(),
+          descricao: inputDescricao
+        }])
+
+        setInputValor("")
+        setInputDescricao("")
     }
 
   return (
@@ -24,6 +44,10 @@ function Imesada() {
         <h4>Controlinho Financeiro</h4>
         <h5>💰Saldo: R${saldo.toFixed(2)}💸 </h5>
         <input type="text" 
+            value={inputDescricao}
+            onChange={(event)=> {setInputDescricao(event.target.value)}}
+            />
+        <input type="text" 
             value={inputValor}
             onChange={(event)=> {setInputValor(event.target.value)}}
             />
@@ -32,6 +56,16 @@ function Imesada() {
             <button className='btCreditar' onClick={creditarValor}>Creditar</button>
             <button className='btDebitar' onClick={debitarValor}>Debitar</button>
         </div>
+        <div className="card-movimentacoes">
+          📄 Relatório Kowalski 🐧
+          {movimentacoes.map((m) => (
+            <div key={m.id} className='card-movimentacao'>
+              <label>{m.descricao}</label>
+              <label> == R${m.valor} == </label>
+              <label>{m.tipo}</label>
+              </div>
+           ))}
+        </div>
       </div>
     </div>
     </>
@@ -39,3 +73,59 @@ function Imesada() {
 }
 
 export default Imesada
+
+// import React, { useState } from 'react'
+// import './Imesada.css'
+
+
+// function Imesada() {
+//     const [saldo, setSaldo] = useState(0);
+//     const [inputValor, setInputValor] = useState('');
+//     const [movimentacoes, setMovimentacoes] = useState([
+//         {tipo: 'crédito', valor: 10, id: Date.now(), descricao: 'Agiotagem'}
+//     ])
+
+//     function creditar(){
+//         setSaldo(saldo + Number(inputValor))
+
+//         setInputValor('')
+//     }
+//     function debitar(){
+//         setSaldo(saldo - Number(inputValor))
+//         setInputValor('')
+//     }
+
+
+//     function atualizarValor(e){
+//         setInputValor(e.target.value)
+//     }
+
+//     return (
+//         <div className={"container-imesada"}>
+//             <div className="form-imesada">
+//                 <img src="./imgs/porco.png" alt="" className="imagem-porco"  />
+//                 <h2>iMesada</h2>
+//                 <p>Controlinho financeiro</p>
+//                 <p>💰Saldo: R${saldo}💸</p>
+//                 <input type="number"
+//                     value={inputValor}
+//                     onChange={atualizarValor}
+//                 />
+//                 {/* {inputValor} */}
+//                 <div className="botoes">
+//                     <button onClick={creditar}>Creditar</button>
+//                     <button onClick={debitar}>Debitar</button>
+//                 </div>
+//                 <div className={"render-cards"}>
+//                     {movimentacoes.map( (m) => (
+//                         <div key={m.id} className={m.tipo}>
+//                             <p>{m.descricao}</p>
+//                         </div>
+//                     ) )}
+//                 </div>
+//             </div>
+//         </div>
+//     )
+// }
+
+// export default Imesada

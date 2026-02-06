@@ -8,8 +8,8 @@ import ListaProdutos from './components/ListaProdutos'
     return (
       <div className='conteiner-app'>
       <Cabecalho />
-      <ListaProdutos/>
-      {/* <Imesada/> */}
+      {/* <ListaProdutos/> */}
+      <Imesada/>
     </div>
   )
 }
