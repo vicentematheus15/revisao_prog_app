@@ -61,7 +61,7 @@ function Imesada() {
           {movimentacoes.map((m) => (
             <div key={m.id} className='card-movimentacao'>
               <p>{m.descricao}</p>
-              <p> R${m.valor}</p>
+              <p>|| R${m.valor} ||</p>
               <p>{m.tipo}</p>
             </div>
            ))}
